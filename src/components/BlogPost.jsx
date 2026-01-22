@@ -1,12 +1,12 @@
 
 function BlogPost({image, text}){
     return(
-        <>  
+        <div class="content">  
             <div>
-                <img src={image} width={400} height={350}/>
+                <img src={image} width="80%"/>
             </div>
             <p>{text}</p>
-        </>
+        </div>
     )
 }
 

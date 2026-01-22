@@ -1,5 +1,5 @@
-#root {
-  margin: 0 auto;
+.content {
+  margin: 0 2rem;
 }
 
 .logo {
@@ -34,7 +34,6 @@
 .navbar{
   display: flex;
   flex-grow: 1;
-  
 }
 
 .navbar ul {
