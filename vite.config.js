@@ -12,7 +12,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         blog: resolve(__dirname, 'src/html/blog.html'),
-        kin_tandem: resolve(__dirname, 'src/html/kin_tandem.html'),
         tall_horse: resolve(__dirname, 'src/html/tall_horse.html'),
         presskit: resolve(__dirname, 'src/html/presskit.html'),
       },

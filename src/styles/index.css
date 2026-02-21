@@ -138,7 +138,7 @@ video {
 
 .trailer {
   margin: 0rem -13rem;
-  background-image: url('src/assets/level1_entrance.png');
+  background-image: url('../assets/level1_entrance.png');
   border-bottom: 2px solid white;
 
   .container {
