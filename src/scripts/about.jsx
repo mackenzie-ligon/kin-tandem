@@ -6,7 +6,9 @@ import AboutUs from '../components/AboutUs.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Navbar />
-    <AboutUs />
+    <div class='content'>
+      <Navbar />
+      <AboutUs />
+    </div>
   </StrictMode>,
 )

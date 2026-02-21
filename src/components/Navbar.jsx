@@ -1,8 +1,9 @@
 import '/src/styles/App.css'
+import logo from '../public/TallHorseLogo_Gradient.png'
 
-function Navbar(){
+function Navbar() {
     return (
-        <nav class='navbar'>
+        <nav className='navbar'>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/src/html/kin_tandem.html">Kin Tandem</a></li>
@@ -10,6 +11,7 @@ function Navbar(){
                 <li><a href="/src/html/blog.html">Blog</a></li>
                 <li><a href="/src/html/presskit.html">Presskit</a></li>
             </ul>
+            <img src={logo} className='navLogo'></img>
         </nav>
     )
 }

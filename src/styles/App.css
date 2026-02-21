@@ -1,63 +1,71 @@
 .content {
-  margin: 0 2rem;
+  margin: 0 3rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.page {
+  margin: 0 10rem;
+  /* display: flex; */
+  justify-content: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-
-.navbar{
+.navbar {
   display: flex;
   flex-grow: 1;
+  margin-top: 1rem;
+
+  ul {
+    display: flex;
+    padding: 0.8rem 0;
+    list-style: none;
+  }
+
+  li a,
+  li button {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.4s;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+  }
+
+  .navLogo {
+    position: absolute;
+    right: calc(50vw - 6rem);
+    float: right;
+    width: 6rem;
+  }
 }
 
-.navbar ul {
-  display: flex;
-  padding: 10;
-  list-style: none;
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
 }
 
-.navbar ul li a,
-.navbar ul li button {
-  text-decoration: none;
-  color: inherit;
+.video {
   display: block;
-  font-size: 20px;
-  padding: 10px 30px;
-  border-radius: 8px;
-  transition: 0.4s;
-  background: none;
-  border: none;
-  cursor: pointer;
-
+  margin-left: auto;
+  margin-right: auto;
+  height: 30rem;
+  padding: 1rem 0;
 }
 
-.navbar ul li a:hover,
-.navbar ul li button:hover {
-  background: rgba(255, 255, 255, 0.25);
+button {
+  .primary {
+
+  }
+
+  .secondary{
+    
+  }
 }
