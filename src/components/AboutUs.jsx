@@ -3,7 +3,12 @@ import logo from '../public/TallHorseLogo_Gradient.png'
 
 function AboutUs() {
   return (
-    <div class="page">
+    <div class='page'>
+      <div class='overlay'>
+        <div class='container'>
+          <img src={logo}></img>
+        </div>
+      </div>
       <h1>Tall Horse</h1>
       <h3>Who We Are</h3>
       <p>A multidisciplinary team made up of Game Design and Production (GDAP) and College of Computing and Informatics (CCI) majors. The project was developed over 9 months as our capstone project.</p>

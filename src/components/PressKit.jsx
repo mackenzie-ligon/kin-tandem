@@ -9,7 +9,7 @@ import logo from '../public/TallHorseLogo_Gradient.png'
 function PressKit() {
     return (
         <div class='page'>
-            <video autoplay muted loop playsInline>
+            <video autoPlay muted={true} loop playsInline>
                 <source src={menu} type="video/mp4" />
             </video>
             <h1>Kin Tandem Press Kit</h1>
