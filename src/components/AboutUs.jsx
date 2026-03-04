@@ -19,19 +19,19 @@ function AboutUs() {
         <Teammate headshot={logo} name="Fox Fleishmann" role="Tech Director" />
         <Teammate headshot={logo} name="Jacob Stratton" role="Creative Director" />
         <Teammate headshot={logo} name="Lily Durand" role="Art Director" />
-        <Teammate headshot={logo} name="Kai Stiefel" role="Mr. Mocap" />
-        <Teammate headshot={logo} name="Prasin Shrestha" role="Mr. Shader" />
-        <Teammate headshot={logo} name="Yalguun Munkhbayar" role="Tallest Horse" />
-        <Teammate headshot={logo} name="Zachary Centracchio" role="Mr. Radio" />
-        <Teammate headshot={logo} name="Audrey Go" role="Concept Art Speedrunner" />
-        <Teammate headshot={logo} name="Adriana Vasquez" role="[role]" />
-        <Teammate headshot={logo} name="Akintoye Ilo" role="British" />
-        <Teammate headshot={logo} name="Cameron Romero" role="Puzzle Master" />
-        <Teammate headshot={logo} name="Josh Walcott" role="[role]" />
+        <Teammate headshot={logo} name="Kai Stiefel" role="Motion Capture Technician" />
+        <Teammate headshot={logo} name="Prasin Shrestha" role="Technical Artist" />
+        <Teammate headshot={logo} name="Yalguun Munkhbayar" role="Game Designer" />
+        <Teammate headshot={logo} name="Zachary Centracchio" role="Environment Artist" />
+        <Teammate headshot={logo} name="Audrey Go" role="Concept Artist, UI Designer" />
+        <Teammate headshot={logo} name="Adriana Vasquez" role="Gameplay Programmer" />
+        <Teammate headshot={logo} name="Akintoye Ilo" role="Sound Designer" />
+        <Teammate headshot={logo} name="Cameron Romero" role="Tools Programmer" />
+        <Teammate headshot={logo} name="Josh Walcott" role="Enemy Programmer" />
         <Teammate headshot={logo} name="Mackenzie Ligon" role="Receptionist" />
-        <Teammate headshot={logo} name="Minhal Vakil" role="[role]" />
-        <Teammate headshot={logo} name="Owen Miller" role="[role]" />
-        <Teammate headshot={logo} name="Ryan Brosius" role="[role]" />
+        <Teammate headshot={logo} name="Minhal Vakil" role="Gameplay Programmer" />
+        <Teammate headshot={logo} name="Owen Miller" role="Gameplay Programmer" />
+        <Teammate headshot={logo} name="Ryan Brosius" role="Tools & System Programmer" />
       </div>
     </div>
   )
