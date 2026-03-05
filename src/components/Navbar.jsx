@@ -15,7 +15,6 @@ function Navbar() {
     }
 
     function toggleNavbar() {
-        console.log('clicked')
         const navbar = document.getElementById('navbar');
         const header = document.getElementById('header');
         navbar.classList.toggle('responsive');
@@ -31,7 +30,7 @@ function Navbar() {
                     <li><a href="/src/html/blog.html">Blog</a></li>
                     <li><a href="/src/html/presskit.html">Presskit</a></li>
                 </ul>
-                <a href="javascript:void(0);" class="icon" onClick={toggleNavbar}>
+                <a href="#" class="icon" onClick={toggleNavbar}>
                     <i class="nav-icon">==</i></a>
                 <img src={logo} className='navLogo'></img>
             </nav>

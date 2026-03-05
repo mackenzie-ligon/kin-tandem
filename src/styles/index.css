@@ -23,16 +23,6 @@ header {
 
   transition: height 0.3s;
 
-  &.responsive {
-    height: 20rem;
-
-    &.shrunk {
-      ul {
-        border: 1px solid green;
-      }
-    }
-  }
-
   &.shrunk {
     margin-top: 0.5rem;
     padding-top: 0.5rem;
@@ -212,6 +202,8 @@ video {
 
   &.bordered {
       border: 2px solid white;
+      /* source slice width outset repeat; */
+      /* border-image: url('../assets/border.png') 15 0 0 fill; */
   }
 
   img {
@@ -316,11 +308,13 @@ video {
     background-color: orangered;
     padding-left: 1rem;
     border-radius: 0 0.8rem 0.8rem 0;
+    border: 3px solid rgba(140, 45, 11, 0.59);
     z-index: -1;
     align-content: center;
     grid-area: text;
 
     &.inverted {
+      z-index: -1;
       border-radius: 0.8rem 0 0 0.8rem;
     }
   }
@@ -364,6 +358,17 @@ video {
 }
 
 @media screen and (max-width: 900px) {
+  header {
+    &.responsive {
+    transition: height 0.15s;
+    height: 20rem;
+
+    &.shrunk {
+      height: 17rem;
+    }
+  }
+  }
+
   .page {
     margin: 0 2rem;
   }
@@ -407,7 +412,12 @@ video {
 
   .navbar {
     ul {
-      display: none;
+      display: block;
+      opacity: 0;
+      li a{
+        display: none;
+      }
+     
     }
 
     .icon {
@@ -419,6 +429,8 @@ video {
     &.responsive {
       ul {
         display: block;
+        opacity: 1;
+        transition: opacity 0.6s;
         flex-direction: column;
         left: 0;
         width: 100%;
