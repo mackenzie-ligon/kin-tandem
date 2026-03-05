@@ -20,6 +20,7 @@ header {
   height: 8rem;
   position: sticky;
   top: 0;
+  z-index: 100;
 
   transition: height 0.3s;
 
@@ -138,7 +139,7 @@ button {
     right: calc(50vw - 3.5rem);
     float: right;
     width: 7rem;
-    transition: width 0.3s;
+    transition: width 0.3s, right 0.3s;
   }
 }
 

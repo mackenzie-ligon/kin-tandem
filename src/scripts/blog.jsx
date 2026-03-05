@@ -7,8 +7,6 @@ import BlogPage from '../components/BlogPage.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Navbar />
-    <div class='content'>
       <BlogPage />
-    </div>
   </StrictMode>,
 )
