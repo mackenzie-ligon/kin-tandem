@@ -1,9 +1,13 @@
 import game_logo from "../assets/kin_tandem_logo.png"
+import beauty1 from "../assets/beauty1.png"
 import beauty2 from "../assets/beauty2.png"
 import beauty3 from "../assets/beauty3.png"
+import beauty4 from "../assets/beauty4.png"
+import entrance from "../assets/level1_entrance.png"
 import puzzle1 from "../assets/puzzle1.png"
 
 function Home() {
+
   return (
     <div class="page">
       <div class='trailer'>
@@ -11,14 +15,15 @@ function Home() {
           <img src={game_logo}></img>
           <video>
           </video>
-          <div class='two-col-grid'>
+          <a class='link-button' target="_blank" rel="noopener noreferrer" href='https://drive.google.com/file/d/1cs0ImF1tteTwsPLidFgjBsnprPpognnb/view?usp=sharing'>Download Now!</a>
+          {/* <div class='two-col-grid'>
             <button>
               Itch
             </button>
             <button>
               Steam
             </button>
-          </div>
+          </div> */}
         </div>
 
       </div>
@@ -30,23 +35,23 @@ function Home() {
       <div class='game-images'>
         <img id="main-img" width="100%" src={beauty2}></img>
         <div class='img-selector'>
-          <img id='img-1' src={beauty2}></img>
-          <img id='img-2' src={beauty2}></img>
-          <img id='img-3' src={beauty2}></img>
-          <img id='img-4' src={beauty2}></img>
-          <img id='img-5' src={beauty2}></img>
-          <img id='img-6' src={beauty2}></img>
-          <img id='img-7' src={beauty2}></img>
-          <img id='img-8' src={beauty2}></img>
+          <SelectorImage idNum={1} src={beauty1} />
+          <SelectorImage idNum={2} src={beauty2} />
+          <SelectorImage idNum={3} src={beauty3} />
+          <SelectorImage idNum={4} src={beauty4} />
+          <SelectorImage idNum={5} src={entrance} />
+          <SelectorImage idNum={6} src={beauty2} />
+          <SelectorImage idNum={7} src={beauty2} />
+          <SelectorImage idNum={8} src={beauty2} />
         </div>
       </div>
       <Feature img={puzzle1} title='Teamwork' text="
       Work as a team to solve puzzles with each character's unique abilities." />
       <Feature img={beauty3} title='Combine' text="Manu can climb on Barsa's shoudlers to reach new heights." inverted={true} />
       <Feature img={puzzle1} title='Avenge' text="Ascend a temple to follow your father's footsteps." />
-      <h1>Take our playtesting survey!</h1>
-      <p>We hope you enjoyed our game. it helps us so much to improve the game and fix bugs if you are able to take our playtesting survey!</p>
-      <button disabled>Survey</button>
+      <h1>Thank you!</h1>
+      <p>We hope you enjoy our game. If you have any feedback please <a href="mailto:tall.horse.game@gmail.com">email us</a> and let us know!</p>
+      <br></br>
     </div>
   )
 }
@@ -73,6 +78,17 @@ function FeatureText({ inverted, title, text }) {
       <h3>{title}</h3>
       <p>{text}</p>
     </div>
+  )
+}
+
+function SelectorImage({ idNum, src }) {
+  function selectImage(id) {
+    const main_img = document.getElementById("main-img");
+    const selected_img = document.getElementById(id);
+    main_img.src = selected_img.src;
+  }
+  return (
+    <img onClick={() => selectImage(`img-${idNum}`)} id={`img-${idNum}`} src={src}></img>
   )
 }
 

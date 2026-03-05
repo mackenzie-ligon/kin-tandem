@@ -11,8 +11,7 @@ function AboutUs() {
       </div>
       <h1>Tall Horse</h1>
       <h3>Who We Are</h3>
-      <p>A multidisciplinary team made up of Game Design and Production (GDAP) and College of Computing and Informatics (CCI) majors. The project was developed over 9 months as our capstone project.</p>
-      <p>How did we become a community of Tall Horses, you ask? A game of jackbox, a google form, and a non-insignificant amount of alcohol.</p>
+      <p>A multidisciplinary team made up of Game Design and Production (GDAP) and College of Computing and Informatics (CCI) majors. The project is being developed over 9 months as our capstone project.</p>
       <div class='three-col-grid'>
         <Teammate headshot={logo} name="Kirstin Bonnick" role="Producer" />
         <Teammate headshot={logo} name="Zachary Millman" role="Producer" />

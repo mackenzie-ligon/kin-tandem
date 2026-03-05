@@ -1,10 +1,10 @@
 :root {
-  font-family: "Inter", sans-serif;
+  font-family: "Grandstander", sans-serif;
   line-height: 1.5;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0), #152F43, #19539A);
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0), #152F43);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,7 +16,42 @@
 
 header {
   background-color: black;
-  padding: 1rem 0;
+  padding-top: 1rem;
+  height: 8rem;
+  position: sticky;
+  top: 0;
+
+  transition: height 0.3s;
+
+  &.responsive{
+    height: 20rem;
+
+    &.shrunk {
+      ul {
+        border: 1px solid green;
+      }
+    }
+  }
+
+  &.shrunk {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    height: 4.75rem;
+
+    ul {
+      padding: 0;
+    }
+
+    li a {
+      font-size: 1.2rem;
+    }
+
+    .navLogo {
+      width: 4rem;
+      right: calc(50vw - 2rem);
+    }
+
+  }
 }
 
 body {
@@ -31,8 +66,14 @@ h1 {
   line-height: 1.1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 500;
+  font-family: "Bungee", sans-serif;
 }
 
 
@@ -64,7 +105,7 @@ button {
 .navbar {
   display: flex;
   flex-grow: 1;
-  margin-left: 3rem;
+  margin-left: 1rem;
   margin-right: 3rem;
 
   ul {
@@ -72,15 +113,21 @@ button {
     padding: 0.8rem 0;
     list-style: none;
     justify-content: space-around;
+    transition: padding 0.3s
+  }
+
+  .icon {
+    display: none;
   }
 
   li a,
   li button {
+    font-family: "Bungee", sans-serif;
     text-decoration: none;
     color: inherit;
     display: flex;
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: 0.4s;
@@ -88,17 +135,42 @@ button {
     border: none;
     cursor: pointer;
 
+    &.active {
+     
+    }
+
     &:hover {
-      background: rgba(255, 166, 0, 0.504);
+       background: rgba(255, 255, 255, 0.2);
     }
 
   }
 
   .navLogo {
     position: absolute;
-    right: calc(50vw - 6rem);
+    right: calc(50vw - 3.5rem);
     float: right;
-    width: 6rem;
+    width: 7rem;
+    transition: width 0.3s;
+  }
+}
+
+.link-button {
+  display: inline-block;
+  padding: 0.8rem 3.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 1rem auto;
+  background-color: orangered;
+  border-radius: 0.5rem;
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgb(137, 6, 6);
+    color: white;
   }
 }
 
@@ -137,31 +209,32 @@ video {
 }
 
 .trailer {
-  margin: 0rem -13rem;
+  margin: 0rem -10rem;
   background-image: url('../assets/level1_entrance.png');
   border-bottom: 2px solid white;
 
   .container {
     width: 100%;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 
-  img {
-    width: 40%;
-  }
+    img {
+      width: 40%;
+    }
 
-  button {
-    padding: 0.8rem 3.5rem;
-  }
+    button {
+      padding: 0.8rem 3.5rem;
+    }
 
-  .two-col-grid {
-    margin: 0 13rem;
+    .two-col-grid {
+      margin: 0 13rem;
+    }
   }
-}
 }
 
 .game-images {
   img {
     border: 2px solid white;
+    transition: border 0.15s;
   }
 
   .img-selector {
@@ -170,6 +243,10 @@ video {
 
     img {
       width: 10%;
+
+      &:hover {
+        border: 2px solid orangered;
+      }
     }
   }
 }
@@ -191,7 +268,7 @@ video {
 
   .feature-text {
     margin: 20% 0;
-    background-color: orange;
+    background-color: orangered;
     padding-left: 1rem;
     border-radius: 0 0.8rem 0.8rem 0;
     z-index: -1;
@@ -204,7 +281,7 @@ video {
 }
 
 .overlay {
-  margin: 0rem -13rem;
+  margin: 0rem -10rem;
   background-image: url('../assets/beauty4.png');
 
   border-bottom: 2px solid white;
@@ -213,10 +290,10 @@ video {
 
   .container {
     width: 100%;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    
+
     img {
       width: 20rem;
       height: 20rem;
@@ -224,5 +301,57 @@ video {
     }
 
   }
+}
 
+
+.blog {
+  margin: 0rem -10rem;
+  background-image: url('../assets/beauty3.png');
+
+  border-bottom: 2px solid white;
+  height: 45rem;
+  display: flex;
+}
+
+@media screen and (max-width: 850px) {
+  .page {
+    margin: 0 2rem;
+  }
+
+  .trailer,
+  .overlay,
+  .blog {
+    margin: 0 -2rem;
+  }
+
+  .three-col-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .navbar {
+    ul{
+      display: none;
+    }
+    .icon{
+      float: right;
+      display: block;
+    }
+    
+
+    &.responsive{
+      ul {
+        display: block;
+        flex-direction: column;
+        left: 0;
+        width: 100%;
+        background-color: black;
+      }
+
+      li a {
+        display: block;
+        padding: 1rem;
+        float: none;
+      }
+    }
+  }
 }
