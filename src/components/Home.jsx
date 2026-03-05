@@ -1,3 +1,4 @@
+import Image from "./Image"
 import game_logo from "../assets/kin_tandem_logo.png"
 import beauty1 from "../assets/beauty1.png"
 import beauty2 from "../assets/beauty2.png"
@@ -10,6 +11,7 @@ function Home() {
 
   return (
     <div class="page">
+      <p>The navbar is currently bugged. We apologize for the inconvenience and are working hard to fix it.</p>
       <div class='trailer'>
         <div class='container'>
           <img src={game_logo}></img>
@@ -33,7 +35,7 @@ function Home() {
       <p>Made by Tall Horse</p>
       <p>Published by Saphead</p>
       <div class='game-images'>
-        <img id="main-img" width="100%" src={beauty2}></img>
+        <Image src={beauty2} isBordered={[true]} id="main-img" />
         <div class='img-selector'>
           <SelectorImage idNum={1} src={beauty1} />
           <SelectorImage idNum={2} src={beauty2} />
@@ -59,12 +61,12 @@ function Home() {
 function Feature({ img, inverted, title, text }) {
   const feature = inverted ?
     (<div class='feature inverted'>
-      <FeatureText inverted={inverted} title={title} text={text} />
-      <img src={img}></img>
+      <FeatureText className={'feature-img'} inverted={inverted} title={title} text={text} />
+      <Image src={img} isBordered={true}/>
     </div>) :
     (<div class='feature '>
-      <img src={img}></img>
-      <FeatureText inverted={inverted} title={title} text={text} />
+      <Image src={img} isBordered={true}/>
+      <FeatureText  className={'feature-img'} inverted={inverted} title={title} text={text} />
     </div>);
 
   return (
@@ -88,8 +90,10 @@ function SelectorImage({ idNum, src }) {
     main_img.src = selected_img.src;
   }
   return (
-    <img onClick={() => selectImage(`img-${idNum}`)} id={`img-${idNum}`} src={src}></img>
-  )
+    <div class='selector-img'>
+       <img onClick={() => selectImage(`img-${idNum}`)} id={`img-${idNum}`} src={src}></img>
+    </div>
+     )
 }
 
 export default Home

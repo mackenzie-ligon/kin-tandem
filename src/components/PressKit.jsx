@@ -1,8 +1,9 @@
-import storyboard from "../assets/storyboard.png"
+import Image from "./Image"
 import menu from "../assets/menuBg.mp4"
 import opener from "../assets/opener.png"
 import shader from "../assets/shader.png"
 import game_logo from "../assets/kin_tandem_logo.png"
+import black_game_logo from "../assets/kin_tandem_logo_black.png"
 import tallhorse_bw from "../assets/TallHorseLogo_SingleColor-Outlined.png"
 import logo from '../public/TallHorseLogo_Gradient.png'
 
@@ -18,12 +19,30 @@ function PressKit() {
                     <h3>Kin Tandem</h3>
                     <p>Kin Tandem is a couch co-op adventure game about a brother and sister searching for answers in a hostile temple. Solve magical puzzles and combat the cultists within to uncover the mysteries behind the chained sun.
                     </p>
-                    <button>Itch Page</button>
+                    <button disabled>Itch Page</button>
                     <button disabled>Full Presskit Download</button>
                 </div>
                 <div>
                     <h3>Factsheet</h3>
-                    <p>Developers: <br></br>i'll add the names later</p>
+                    <p>Developers: <br/>
+                    Kirstin Bonnick<br/>
+                    Zachary Millman<br/>
+                    Fox Fleishmann<br/>
+                    Jacob Stratton<br/>
+                    Lily Durand<br/>
+                    Kai Stiefel<br/>
+                    Prasin Shrestha<br/>
+                    Yalguun Munkhbayar<br/>
+                    Zachary Centracchio<br/>
+                    Audrey Go<br/>
+                    Adriana Vasquez<br/>
+                    Akintoye Ilo<br/>
+                    Cameron Romero<br/>
+                    Josh Walcott<br/>
+                    Mackenzie Ligon<br/>
+                    Minhal Vakil<br/>
+                    Owen Miller<br/>
+                    Ryan Brosius</p>
                     <p>Publisher:<br></br>Saphead, Tall Horse</p>
                     <p>Release Date:<br></br>Q2 2026</p>
                     <p>Platforms:<br></br>Itch, Steam</p>
@@ -44,8 +63,8 @@ function PressKit() {
                     </ul>
                 </div>
                 <div><h3>Tall Horse</h3>
-                    <p>A Multidisciplinary team of Drexel seniors made up of Game Design and Production and College of Computing and Informatics majors. This project was developed over 9 months as our capstone project. </p>
-                    <button> Check out Tall Horse here!</button>
+                    <p>A Multidisciplinary team of Drexel seniors made up of Game Design and Production and College of Computing and Informatics majors. This project is being developed over 9 months as our capstone project. </p>
+                    <a class='link-button' href="/src/html/tall_horse.html">Check Out Tall Horse</a>
                 </div>
             </div>
             <video autoplay muted loop playsInline>
@@ -55,14 +74,14 @@ function PressKit() {
                 <source src={menu} type="video/mp4" />
             </video>
             <div class='two-col-grid'>
-                <img src={opener}></img>
-                <img src={shader}></img>
+                <Image src={opener} />
+                <Image src={shader} />
             </div>
             <div class='two-col-grid'>
-                <img src={game_logo}></img>
-                <img src={logo}></img>
-                <img src={game_logo}></img>
-                <img src={tallhorse_bw}></img>
+                <Image src={game_logo} isSquare={true} />
+                <Image src={logo} isSquare={true} />
+                <Image src={black_game_logo} isSquare={true} />
+                <Image src={tallhorse_bw} isSquare={true} />
             </div>
         </div>
     )

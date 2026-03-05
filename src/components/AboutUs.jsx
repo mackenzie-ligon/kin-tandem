@@ -1,5 +1,5 @@
 import logo from '../public/TallHorseLogo_Gradient.png'
-
+import Image from "./Image"
 
 function AboutUs() {
   return (
@@ -39,7 +39,7 @@ function AboutUs() {
 function Teammate({ headshot, name, role, portfolio }) {
   return (
     <div>
-      <img src={headshot} width='100%'></img>
+      <Image src={headshot} isSquare={true}/>
       <h3>{name}</h3>
       <h3>{role}</h3>
       <h4>{portfolio}</h4>
