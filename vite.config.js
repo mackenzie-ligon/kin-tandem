@@ -7,14 +7,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // build: {
-  //   rollupOptions: {
-  //     input: {
-  //       main: resolve(__dirname, 'index.html'),
-  //       blog: resolve(__dirname, 'blog'),
-  //       tall_horse: resolve(__dirname, 'about-us'),
-  //       presskit: resolve(__dirname, 'presskit'),
-  //     },
-  //   },
-  // },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        blog: resolve(__dirname, 'blog/index.html'),
+        about_us: resolve(__dirname, 'about-us/index.html'),
+        presskit: resolve(__dirname, 'presskit/index.html'),
+      },
+    },
+  },
 })
