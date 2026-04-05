@@ -50,7 +50,7 @@ function PressKit() {
                     <p>Press Contact:<br></br>tall.horse.game@gmail.com</p>
                 </div>
             </div>
-            <video autoplay muted loop playsInline>
+            <video autoPlay muted={true} loop playsInline>
                 <source src={menu} type="video/mp4" />
             </video>
             <div class='two-col-grid'>
@@ -67,10 +67,10 @@ function PressKit() {
                     <a class='link-button' href="/src/html/tall_horse.html">Check Out Tall Horse</a>
                 </div>
             </div>
-            <video autoplay muted loop playsInline>
+            <video autoPlay muted={true} loop playsInline>
                 <source src={menu} type="video/mp4" />
             </video>
-            <video autoplay muted loop playsInline>
+            <video autoPlay muted={true} loop playsInline>
                 <source src={menu} type="video/mp4" />
             </video>
             <div class='two-col-grid'>

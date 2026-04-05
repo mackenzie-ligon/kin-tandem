@@ -26,7 +26,7 @@ function AboutUs() {
         <Teammate headshot={logo} name="Adriana Vasquez" role="Gameplay Programmer" />
         <Teammate headshot={logo} name="Akintoye Ilo" role="Sound Designer" />
         <Teammate headshot={logo} name="Cameron Romero" role="Tools Programmer" />
-        <Teammate headshot={logo} name="Josh Walcott" role="Enemy Programmer" />
+        <Teammate headshot={logo} name="Josh Walcott" role="Enemy Programmer" portfolio={`https://joshuawalcott.site/`} />
         <Teammate headshot={logo} name="Mackenzie Ligon" role="Receptionist" />
         <Teammate headshot={logo} name="Minhal Vakil" role="Gameplay Programmer" />
         <Teammate headshot={logo} name="Owen Miller" role="Gameplay Programmer" />
@@ -36,13 +36,41 @@ function AboutUs() {
   )
 }
 
-function Teammate({ headshot, name, role, portfolio }) {
+function Teammate({ headshot, name, role, portfolio, blurb }) {
+  
+  function showModal() {
+    const dialog = document.getElementById(`${name}-dialog`);
+    dialog.showModal();
+  }
+  function closeModal() {
+    const dialog = document.getElementById(`${name}-dialog`);
+    console.log('close');
+    dialog.close();
+  }
+
   return (
-    <div>
-      <Image src={headshot} isSquare={true}/>
+    <div class='teammate' onClick={showModal}>
+      <Image src={headshot} isSquare={true} />
+      <dialog id={`${name}-dialog`} class='teammate-modal'>
+        <button onClick={closeModal}>Close</button>
+
+        <div class='two-col-grid'>
+          <Image src={headshot} isSquare={true} />
+          <div>
+            <h2>{name}</h2>
+            <h3>{role}</h3>
+            <a href={portfolio} target="_blank" rel="noopener noreferrer">
+              Portfolio
+            </a>
+            <p>{blurb}</p>
+          </div>
+        </div>
+      </dialog>
       <h3>{name}</h3>
       <h3>{role}</h3>
-      <h4>{portfolio}</h4>
+      <a href={portfolio} target="_blank" rel="noopener noreferrer">
+        Portfolio
+      </a>
     </div>
   )
 }

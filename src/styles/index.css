@@ -14,6 +14,15 @@
   font-weight: 250;
 }
 
+a {
+  color: #97a0fc;
+
+  &:hover,
+  &:active {
+    color: #ff9c9d;
+  }
+}
+
 header {
   background-color: black;
   padding-top: 1rem;
@@ -202,9 +211,9 @@ video {
   overflow: hidden;
 
   &.bordered {
-      border: 2px solid white;
-      /* source slice width outset repeat; */
-      /* border-image: url('../assets/border.png') 15 0 0 fill; */
+    border: 2px solid white;
+    /* source slice width outset repeat; */
+    /* border-image: url('../assets/border.png') 15 0 0 fill; */
   }
 
   img {
@@ -221,7 +230,7 @@ video {
   overflow: hidden;
 
   &.bordered {
-      border: 2px solid white;
+    border: 2px solid white;
   }
 
   img {
@@ -258,19 +267,27 @@ video {
   }
 }
 
-.game-images {
+.main-img {
+  transition: opacity 0.2s;
 
+  &.fade-out {
+    opacity: 0;
+  }
+}
+
+.game-images {
   .img-selector {
     margin: 1rem 0;
     border-radius: 0.8rem;
     display: flex;
     justify-content: center;
-  
+
     .selector-img {
       width: 2rem;
       aspect-ratio: 16 / 9;
       flex: 1;
     }
+
     img {
       transition: border 0.15s;
       border: 2px solid white;
@@ -278,8 +295,10 @@ video {
       height: 100%;
       object-fit: cover;
       object-position: center center;
+
       &:hover {
         border: 2px solid orangered;
+        position: sticky;
         z-index: 10;
       }
     }
@@ -317,7 +336,19 @@ video {
     &.inverted {
       z-index: -1;
       border-radius: 0.8rem 0 0 0.8rem;
+      border-right: none;
     }
+  }
+}
+
+.teammate {
+  &:hover {
+    cursor: pointer;
+  }
+
+  .teammate-modal {
+    width: 70%;
+    height: 75%;
   }
 }
 
@@ -358,18 +389,68 @@ video {
   display: flex;
 }
 
-@media screen and (max-width: 900px) {
-  header {
+@media screen and (max-width: 1200px) {
+    header {
     &.responsive {
-    transition: height 0.15s;
-    height: 20rem;
+      transition: height 0.15s;
+      height: 20rem;
 
-    &.shrunk {
-      height: 17rem;
+      &.shrunk {
+        height: 17rem;
+      }
     }
   }
-  }
 
+  .navbar {
+    ul {
+      display: block;
+      opacity: 0;
+
+      li a {
+        display: none;
+      }
+    }
+
+    .icon {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      margin-left: auto;
+      background-size: cover;
+      background-position: center;
+      background-image: url('../assets/purple_burger.png');
+
+      &:hover {
+        background-image: url('../assets/peach_burger.png');
+        cursor: pointer;
+      }
+    }
+
+    &.responsive {
+      ul {
+        display: block;
+        opacity: 1;
+        transition: opacity 0.6s;
+        flex-direction: column;
+        left: 0;
+        width: 100%;
+        background-color: black;
+      }
+
+      .navLogo {
+        display: none;
+      }
+
+      li a {
+        display: block;
+        padding: 1rem;
+        float: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
   .page {
     margin: 0 2rem;
   }
@@ -382,6 +463,12 @@ video {
 
   .three-col-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .teammate {
+    .two-col-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .feature {
@@ -407,45 +494,6 @@ video {
 
       &.inverted {
         border-radius: 0 0 0.8rem 0.8rem;
-      }
-    }
-  }
-
-  .navbar {
-    ul {
-      display: block;
-      opacity: 0;
-      li a{
-        display: none;
-      }
-     
-    }
-
-    .icon {
-      display: block;
-      float: right;
-    }
-
-
-    &.responsive {
-      ul {
-        display: block;
-        opacity: 1;
-        transition: opacity 0.6s;
-        flex-direction: column;
-        left: 0;
-        width: 100%;
-        background-color: black;
-      }
-
-      .navLogo {
-        display: none;
-      }
-
-      li a {
-        display: block;
-        padding: 1rem;
-        float: none;
       }
     }
   }
