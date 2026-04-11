@@ -17,15 +17,11 @@ function Home() {
           <img src={game_logo}></img>
           <video>
           </video>
+          <div >
+            <a class='link-button' href='https://tall-horse.itch.io/kin-tandem'>Itch.io</a>
+          </div>
           <a class='link-button' target="_blank" rel="noopener noreferrer" href='https://drive.google.com/file/d/1cs0ImF1tteTwsPLidFgjBsnprPpognnb/view?usp=sharing'>Download Now!</a>
-          {/* <div class='two-col-grid'>
-            <button>
-              Itch
-            </button>
-            <button>
-              Steam
-            </button>
-          </div> */}
+
         </div>
       </div>
       <p>
@@ -100,23 +96,23 @@ function Selector() {
   }, [currentImage]);
 
   return (
-      <div class='game-images'>
-        <Image imgClassName='main-img' src={beauty1} isBordered={[true]} id="main-img" />
-        <div class='img-selector'>
-          <SelectorImage idNum={1} src={beauty1} />
-          <SelectorImage idNum={2} src={beauty2} />
-          <SelectorImage idNum={3} src={beauty3}  />
-          <SelectorImage idNum={4} src={beauty4}  />
-          <SelectorImage idNum={5} src={entrance}  />
-          <SelectorImage idNum={6} src={beauty2} />
-          <SelectorImage idNum={7} src={beauty2} />
-          <SelectorImage idNum={8} src={beauty2} />
-        </div>
+    <div class='game-images'>
+      <Image imgClassName='main-img' src={beauty1} isBordered={[true]} id="main-img" />
+      <div class='img-selector'>
+        <SelectorImage idNum={1} src={beauty1} />
+        <SelectorImage idNum={2} src={beauty2} />
+        <SelectorImage idNum={3} src={beauty3} />
+        <SelectorImage idNum={4} src={beauty4} />
+        <SelectorImage idNum={5} src={entrance} />
+        <SelectorImage idNum={6} src={beauty2} />
+        <SelectorImage idNum={7} src={beauty2} />
+        <SelectorImage idNum={8} src={beauty2} />
       </div>
+    </div>
   );
 }
 
-function selectImage(id, pause=true, setPause=null) {
+function selectImage(id, pause = true, setPause = null) {
   const main_img = document.getElementById("main-img");
   main_img.classList.add('fade-out');
   setTimeout(() => {
