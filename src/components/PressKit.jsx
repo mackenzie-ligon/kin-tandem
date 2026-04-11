@@ -15,39 +15,45 @@ function PressKit() {
             </video>
             <h1>Kin Tandem Press Kit</h1>
             <div class='two-col-grid'>
-                <div>
-                    <h3>Kin Tandem</h3>
+                <h3>Factsheet</h3>
+                <h3>Kin Tandem</h3>
+                </div>
+            <div class='two-col-grid'>
+                <div class='two-col-grid'>
+                    <div>
+                        <p>Developers: <br />
+                            Kirstin Bonnick<br />
+                            Zachary Millman<br />
+                            Fox Fleishmann<br />
+                            Jacob Stratton<br />
+                            Lily Durand<br />
+                            Kai Stiefel<br />
+                            Prasin Shrestha<br />
+                            Yalguun Munkhbayar<br />
+                            Zachary Centracchio<br />
+                            Audrey Go<br />
+                            Adriana Vasquez<br />
+                            Akintoye Ilo<br />
+                            Cameron Romero<br />
+                            Josh Walcott<br />
+                            Mackenzie Ligon<br />
+                            Minhal Vakil<br />
+                            Owen Miller<br />
+                            Ryan Brosius</p>
+                    </div>
+                    <div>
+                        <p>Publisher:<br></br>Saphead, Tall Horse</p>
+                        <p>Release Date:<br></br>Q2 2026</p>
+                        <p>Platforms:<br></br>Itch, Steam</p>
+                        <p>Website:<br></br>kin-tandem.com</p>
+                        <p>Press Contact:<br></br>tall.horse.game@gmail.com</p>
+                    </div>
+                </div>
+                 <div>
                     <p>Kin Tandem is a couch co-op adventure game about a brother and sister searching for answers in a hostile temple. Solve magical puzzles and combat the cultists within to uncover the mysteries behind the chained sun.
                     </p>
                     <button disabled>Itch Page</button>
                     <button disabled>Full Presskit Download</button>
-                </div>
-                <div>
-                    <h3>Factsheet</h3>
-                    <p>Developers: <br/>
-                    Kirstin Bonnick<br/>
-                    Zachary Millman<br/>
-                    Fox Fleishmann<br/>
-                    Jacob Stratton<br/>
-                    Lily Durand<br/>
-                    Kai Stiefel<br/>
-                    Prasin Shrestha<br/>
-                    Yalguun Munkhbayar<br/>
-                    Zachary Centracchio<br/>
-                    Audrey Go<br/>
-                    Adriana Vasquez<br/>
-                    Akintoye Ilo<br/>
-                    Cameron Romero<br/>
-                    Josh Walcott<br/>
-                    Mackenzie Ligon<br/>
-                    Minhal Vakil<br/>
-                    Owen Miller<br/>
-                    Ryan Brosius</p>
-                    <p>Publisher:<br></br>Saphead, Tall Horse</p>
-                    <p>Release Date:<br></br>Q2 2026</p>
-                    <p>Platforms:<br></br>Itch, Steam</p>
-                    <p>Website:<br></br>kin-tandem.com</p>
-                    <p>Press Contact:<br></br>tall.horse.game@gmail.com</p>
                 </div>
             </div>
             <video autoPlay muted={true} loop playsInline>

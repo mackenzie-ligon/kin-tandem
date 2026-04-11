@@ -18,7 +18,7 @@ function AboutUs() {
         <Teammate headshot={logo} name="Fox Fleishmann" role="Tech Director" />
         <Teammate headshot={logo} name="Jacob Stratton" role="Creative Director" />
         <Teammate headshot={logo} name="Lily Durand" role="Art Director" />
-        <Teammate headshot={logo} name="Kai Stiefel" role="Motion Capture Technician" />
+        <Teammate headshot={logo} name="Kai Stiefel" role="Motion Capture Technician" portfolio={`https://www.artstation.com/stieefus`}/>
         <Teammate headshot={logo} name="Prasin Shrestha" role="Technical Artist" />
         <Teammate headshot={logo} name="Yalguun Munkhbayar" role="Game Designer" />
         <Teammate headshot={logo} name="Zachary Centracchio" role="Environment Artist" />
