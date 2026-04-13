@@ -68,7 +68,7 @@ function Teammate({ headshot, name, role, portfolio, blurb }) {
         <Image src={headshot} isSquare={true} />
         <dialog id={`${name}-dialog`} closedby='any' class='teammate-modal'>
           <div class='two-col-grid'>
-            <button onClick={closeModal} class='modal-close'>Close</button>
+            <button onClick={closeModal} class='modal-close'>X</button>
             <Image src={headshot} isSquare={true} />
             <div>
               <h2>{name}</h2>
