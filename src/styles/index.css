@@ -352,6 +352,11 @@ video {
   .teammate-modal {
     width: 70%;
     height: 75%;
+    .modal-close{
+      position: absolute;
+      top: 0.2rem;
+      right: 0.5rem;
+    }
   }
 }
 
