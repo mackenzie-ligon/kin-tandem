@@ -54,7 +54,7 @@ function Teammate({ headshot, name, role, portfolio, blurb }) {
   }, [dialog]); // Run
 
 
-  const showModal = () => {
+  const openModal = () => {
     dialog.showModal();
   }
   const closeModal = (e) => {
@@ -64,7 +64,7 @@ function Teammate({ headshot, name, role, portfolio, blurb }) {
 
   return (
     <div>
-      <div class='teammate' onClick={showModal}>
+      <div class='teammate' onClick={openModal}>
         <Image src={headshot} isSquare={true} />
         <dialog id={`${name}-dialog`} closedby='any' class='teammate-modal'>
           <div class='two-col-grid'>
