@@ -1,32 +1,32 @@
-import logo from '../public/TallHorseLogo_Gradient.png'
 import Image from "./Image"
 import { useEffect } from 'react';
 
 function AboutUs() {
+  const logo = 'TallHorseLogo_Gradient.png'
   return (
     <div class='page'>
       <div class='overlay'>
         <div class='container'>
-          <img src={logo}></img>
+          <img src='/TallHorseLogo_Gradient.png'></img>
         </div>
       </div>
       <h1>Tall Horse</h1>
       <h3>Who We Are</h3>
       <p>A multidisciplinary team made up of Game Design and Production (GDAP) and College of Computing and Informatics (CCI) majors. The project is being developed over 9 months as our capstone project.</p>
       <div class='three-col-grid'>
-        <Teammate headshot={logo} name="Kirstin Bonnick" role="Producer" />
-        <Teammate headshot={logo} name="Zachary Millman" role="Producer" />
+        <Teammate headshot='Kirstin.png' name="Kirstin Bonnick" role="Producer" />
+        <Teammate headshot='ZacM.png' name="Zachary Millman" role="Producer" />
         <Teammate headshot={logo} name="Fox Fleishmann" role="Tech Director" />
-        <Teammate headshot={logo} name="Jacob Stratton" role="Creative Director" />
+        <Teammate headshot='Jake.png' name="Jacob Stratton" role="Creative Director" />
         <Teammate headshot={logo} name="Lily Durand" role="Art Director" />
-        <Teammate headshot={logo} name="Kai Stiefel" role="Motion Capture Technician" portfolio={`https://www.artstation.com/stieefus`} />
+        <Teammate headshot='Kai.png' name="Kai Stiefel" role="Motion Capture Technician" portfolio={`https://www.artstation.com/stieefus`} />
         <Teammate headshot={logo} name="Prasin Shrestha" role="Technical Artist" portfolio={`https://prasinshrestha2001.artstation.com/`} />
-        <Teammate headshot={logo} name="Yalguun Munkhbayar" role="Game Designer" portfolio={`https://akoreyu.artstation.com/`} />
+        <Teammate headshot='Ako.png' name="Yalguun Munkhbayar" role="Game Designer" portfolio={`https://akoreyu.artstation.com/`} />
         <Teammate headshot={logo} name="Zachary Centracchio" role="Environment Artist" />
-        <Teammate headshot={logo} name="Audrey Go" role="Concept Artist, UI Designer" />
-        <Teammate headshot={logo} name="Adriana Vasquez" role="Gameplay Programmer" portfolio={`https://www.linkedin.com/in/adriana--vasquez/`} />
-        <Teammate headshot={logo} name="Akintoye Ilo" role="Gameplay Programmer, Sound Designer" />
-        <Teammate headshot={logo} name="Cameron Romero" role="Tools Programmer" />
+        <Teammate headshot='Audrey.png' name="Audrey Go" role="Concept Artist, UI Designer" />
+        <Teammate headshot='Adriana.png' name="Adriana Vasquez" role="Gameplay Programmer" portfolio={`https://www.linkedin.com/in/adriana--vasquez/`} />
+        <Teammate headshot='Akintoye.png' name="Akintoye Ilo" role="Gameplay Programmer, Sound Designer" />
+        <Teammate headshot='Cam.png' name="Cameron Romero" role="Tools Programmer" />
         <Teammate headshot={logo} name="Josh Walcott" role="Enemy Programmer" portfolio={`https://joshuawalcott.site/`} />
         <Teammate headshot={logo} name="Mackenzie Ligon" role="Web Developer" blurb={'Mackenzie primarily focused on developing this website (and hopes you like it!) but also wrote most of the technical documentation for the game, including the System Requirements Specification, Design Document, and Acceptance Testing Plan. She did some minor engine work, creating a few puzzle pieces (moving platforms and adjustable columns).'} />
         <Teammate headshot={logo} name="Minhal Vakil" role="Gameplay Programmer" portfolio={`https://www.linkedin.com/in/minhalvakil/`} />
@@ -38,9 +38,9 @@ function AboutUs() {
 }
 
 function Teammate({ headshot, name, role, portfolio, blurb }) {
-  const dialog = document.getElementById(`${name}-dialog`);
-
   useEffect(() => {
+    const dialog = document.getElementById(`${name.split(" ")[1]}-dialog`);
+
     const handleClick = (e) => {
       if (e.target === dialog) dialog.close();
     }
@@ -51,13 +51,17 @@ function Teammate({ headshot, name, role, portfolio, blurb }) {
     return () => {
       window.removeEventListener('click', handleClick);
     };
-  }, [dialog]); // Run
+  }, []); // Run
 
 
   const openModal = () => {
+    const dialog = document.getElementById(`${name.split(" ")[1]}-dialog`);
+
     dialog.showModal();
   }
   const closeModal = (e) => {
+    const dialog = document.getElementById(`${name.split(" ")[1]}-dialog`);
+
     dialog.close();
     e.stopPropagation();
   }
@@ -65,11 +69,11 @@ function Teammate({ headshot, name, role, portfolio, blurb }) {
   return (
     <div>
       <div class='teammate' onClick={openModal}>
-        <Image src={headshot} isSquare={true} />
-        <dialog id={`${name}-dialog`} closedby='any' class='teammate-modal'>
+        <Image src={`/headshots/${headshot}`} isSquare={true} />
+        <dialog id={`${name.split(" ")[1]}-dialog`} closedby='any' class='teammate-modal'>
           <div class='two-col-grid'>
             <button onClick={closeModal} class='modal-close'>X</button>
-            <Image src={headshot} isSquare={true} />
+            <Image src={`/headshots/${headshot}`} isSquare={true} />
             <div>
               <h2>{name}</h2>
               <h3>{role}</h3>

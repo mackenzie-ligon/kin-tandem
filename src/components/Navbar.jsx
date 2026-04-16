@@ -1,4 +1,4 @@
-import logo from '../public/TallHorseLogo_Gradient.png'
+import logo from '/TallHorseLogo_Gradient.png'
 import { useEffect } from 'react';
 
 

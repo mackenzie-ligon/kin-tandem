@@ -5,7 +5,7 @@ import shader from "../assets/shader.png"
 import game_logo from "../assets/kin_tandem_logo.png"
 import black_game_logo from "../assets/kin_tandem_logo_black.png"
 import tallhorse_bw from "../assets/TallHorseLogo_SingleColor-Outlined.png"
-import logo from '../public/TallHorseLogo_Gradient.png'
+import logo from '/TallHorseLogo_Gradient.png'
 
 function PressKit() {
     return (
