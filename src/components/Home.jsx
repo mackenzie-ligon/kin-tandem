@@ -20,20 +20,19 @@ function Home() {
           <div >
             <a class='link-button' href='https://tall-horse.itch.io/kin-tandem'>Itch.io</a>
           </div>
-          <a class='link-button' target="_blank" rel="noopener noreferrer" href='https://drive.google.com/file/d/1cs0ImF1tteTwsPLidFgjBsnprPpognnb/view?usp=sharing'>Download Now!</a>
-
         </div>
       </div>
       <p>
-        Kin Tandem is a split-screen co-op puzzle adventure game about a brawling older sister and mage younger brother exploring an overgrown, dilapidated, and cult infested temple. As brother and sister, you can stack on top of each other to defeat enemies and solve puzzles. Solve the mystery of the environment in Kin Tandem.
+        In Kin Tandem, a new local co-op adventure, take the role of a pair of feline siblings as they climb their way through a magic temple. Work in tandem to combine Barsa's strength with Manu's spells as you solve challenges and defeat enemies.
       </p>
-      <p>Made by Tall Horse</p>
+      <p>Developed by Tall Horse</p>
       <p>Published by Saphead</p>
       <Selector />
-      <Feature img={puzzle1} title='Teamwork' text="
-      Work as a team to solve puzzles with each character's unique abilities." />
-      <Feature img={beauty3} title='Combine' text="Manu can climb on Barsa's shoudlers to reach new heights." inverted={true} />
-      <Feature img={puzzle1} title='Avenge' text="Ascend a temple to follow your father's footsteps." />
+      <Feature img={puzzle1} title="Co-op at Its Core" text="
+      Solve puzzles, defeat enemies, and work in tandem in this split-screen adventure built for two!" />
+      <Feature img={beauty3} title='Combine Your Skills' text=" Discover new ways to use Barsa’s brawling and Manu’s magic together as you climb your way through the temple. Manu can climb on Barsa’s shoulder to literally combine their powers and reach new paths." inverted={true} />
+      <Feature img={puzzle1} title='Break the Chains' text="Join the feline family on their journey to find their missing father. Along the way take down a dastardly cult, shatter their magical chains, and bring life back to the jungle.
+" />
       <h1>Thank you!</h1>
       <p>We hope you enjoy our game. If you have any feedback please <a href="mailto:tall.horse.game@gmail.com">email us</a> and let us know!</p>
       <br></br>
@@ -71,6 +70,7 @@ function FeatureText({ inverted, title, text, timerID, setTimerID }) {
 function Selector() {
   const [currentImage, setCurrentImage] = useState(2);
   const [paused, setPaused] = useState(false);
+  const timerIDs = [];
 
   const selectorSlideshowInterval = () => {
     if (paused) {
@@ -82,52 +82,59 @@ function Selector() {
       }
       return prevCurrentImage + 1;
     });
-    selectImage(`img-${currentImage}`);
+    selectImage(currentImage, false, setPaused, setCurrentImage);
   }
 
   useEffect(() => {
-    console.log("useEffect runs");
 
     const interval = setInterval(() => {
       selectorSlideshowInterval();
     }, 7000);
 
+    timerIDs.push(interval);
     return () => clearInterval(interval);
-  }, [currentImage]);
+  }, [currentImage, paused]);
 
   return (
     <div class='game-images'>
       <Image imgClassName='main-img' src={beauty1} isBordered={[true]} id="main-img" />
       <div class='img-selector'>
-        <SelectorImage idNum={1} src={beauty1} />
-        <SelectorImage idNum={2} src={beauty2} />
-        <SelectorImage idNum={3} src={beauty3} />
-        <SelectorImage idNum={4} src={beauty4} />
-        <SelectorImage idNum={5} src={entrance} />
-        <SelectorImage idNum={6} src={beauty2} />
-        <SelectorImage idNum={7} src={beauty2} />
-        <SelectorImage idNum={8} src={beauty2} />
+        <SelectorImage idNum={1} src={beauty1} setCurrent={setCurrentImage} setPause={setPaused} />
+        <SelectorImage idNum={2} src={beauty2} setCurrent={setCurrentImage} setPause={setPaused} />
+        <SelectorImage idNum={3} src={beauty3} setCurrent={setCurrentImage} setPause={setPaused} />
+        <SelectorImage idNum={4} src={beauty4} setCurrent={setCurrentImage} setPause={setPaused} />
+        <SelectorImage idNum={5} src={entrance} setCurrent={setCurrentImage} setPause={setPaused} />
+        <SelectorImage idNum={6} src={beauty2} setCurrent={setCurrentImage} setPause={setPaused} />
+        <SelectorImage idNum={7} src={beauty2} setCurrent={setCurrentImage} setPause={setPaused} />
+        <SelectorImage idNum={8} src={beauty2} setCurrent={setCurrentImage} setPause={setPaused} />
       </div>
     </div>
   );
 }
 
-function selectImage(id, pause = true, setPause = null) {
+function selectImage(id, pause, setPause, setCurrent) {
+  setPause(pause);
   const main_img = document.getElementById("main-img");
   main_img.classList.add('fade-out');
   setTimeout(() => {
     const main_img = document.getElementById("main-img");
-    const selected_img = document.getElementById(id);
+    const selected_img = document.getElementById(`img-${id}`);
     main_img.src = selected_img.src;
     main_img.classList.remove('fade-out');
   }, 230);
+  if (pause) {
+    setCurrent(id +1);
+    setTimeout(() => {
+      setPause(false)
+    }, 5000);
+  }
+
 }
 
-function SelectorImage({ idNum, src, timerID }) {
-  clearInterval(timerID);
+function SelectorImage({ idNum, src, setPause, setCurrent}) {
   return (
     <div class='selector-img'>
-      <img onClick={() => selectImage(`img-${idNum}`)} id={`img-${idNum}`} src={src}></img>
+      <img onClick={() => selectImage(idNum, true, setPause, setCurrent)} id={`img-${idNum}`} src={src}></img>
     </div>
   )
 }

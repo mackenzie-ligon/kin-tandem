@@ -364,6 +364,10 @@ video {
         color: orangered;
       }
     }
+    .editor-note {
+      font-style: italic;
+      color: rgb(255, 255, 255, 0.7);
+    }
   }
 }
 
