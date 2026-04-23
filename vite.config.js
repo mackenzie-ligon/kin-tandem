@@ -8,6 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 export default defineConfig({
   plugins: [react()],
   publicDir: 'src/public',
+  assetsInclude: ['**/*.zip'],
   build: {
     rollupOptions: {
       input: {

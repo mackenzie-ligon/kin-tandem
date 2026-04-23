@@ -1,23 +1,18 @@
 import Image from "./Image"
+import full_presskit from "../assets/TallHorse_KinTandem_Presskit.zip"
 import menu from "../assets/menuBg.mp4"
-import opener from "../assets/opener.png"
-import shader from "../assets/shader.png"
-import game_logo from "../assets/kin_tandem_logo.png"
-import black_game_logo from "../assets/kin_tandem_logo_black.png"
-import tallhorse_bw from "../assets/TallHorseLogo_SingleColor-Outlined.png"
-import logo from '/TallHorseLogo_Gradient.png'
 
 function PressKit() {
     return (
         <div class='page'>
             <video autoPlay muted={true} loop playsInline>
-                <source src={menu} type="video/mp4" />
+                <source src='/videos/Video_KinTandemTrailer.mp4' type="video/mp4" />
             </video>
             <h1>Kin Tandem Press Kit</h1>
             <div class='two-col-grid'>
                 <h3>Factsheet</h3>
                 <h3>Kin Tandem</h3>
-                </div>
+            </div>
             <div class='two-col-grid'>
                 <div class='two-col-grid'>
                     <div>
@@ -42,18 +37,19 @@ function PressKit() {
                             Ryan Brosius</p>
                     </div>
                     <div>
-                        <p>Publisher:<br></br>Saphead, Tall Horse</p>
+                        <p>Developer:<br></br>Tall Horse</p>
+                        <p>Publisher:<br></br>Saphead</p>
                         <p>Release Date:<br></br>Q2 2026</p>
                         <p>Platforms:<br></br>Itch, Steam</p>
                         <p>Website:<br></br>kin-tandem.com</p>
                         <p>Press Contact:<br></br>tall.horse.game@gmail.com</p>
                     </div>
                 </div>
-                 <div>
-                    <p>Kin Tandem is a couch co-op adventure game about a brother and sister searching for answers in a hostile temple. Solve magical puzzles and combat the cultists within to uncover the mysteries behind the chained sun.
+                <div>
+                    <p>In Kin Tandem, a new local co-op adventure, take the role of a pair of feline siblings as they climb their way through a magic temple. Work in tandem to combine Barsa's strength with Manu's spells as you solve challenges and defeat enemies.
                     </p>
-                    <button disabled>Itch Page</button>
-                    <button disabled>Full Presskit Download</button>
+                    <a class='link-button centered' href='https://tall-horse.itch.io/kin-tandem' target='_blank'>Itch.io</a>
+                    <a class='link-button centered' href={full_presskit} download>Full Presskit Download</a>
                 </div>
             </div>
             <video autoPlay muted={true} loop playsInline>
@@ -63,31 +59,49 @@ function PressKit() {
                 <div>
                     <h3>Features</h3>
                     <ul>
-                        <li>Work as a team to solve puzzle with each character unique abilities</li>
-                        <li>Manu can climb on Barsa's shoulders to reach new heights. </li>
-                        <li>Ascend a temple to follow your father’s footsteps.</li>
+                        <li>Co-op at its core - Solve puzzles, defeat enemies, and work in tandem in this split-screen adventure built for two!</li>
+                        <li>Combine your Skills - Discover new ways to use Barsa's brawling and Manu's magic together as you climb your way through the temple. Manu can climb on Barsa’s shoulder to literally combine their powers and reach new paths.</li>
+                        <li>Break the Chains - Join the feline family on their journey to find their missing father. Along the way take down a dastardly cult, shatter their magical chains, and bring life back to the jungle.</li>
                     </ul>
                 </div>
                 <div><h3>Tall Horse</h3>
                     <p>A Multidisciplinary team of Drexel seniors made up of Game Design and Production and College of Computing and Informatics majors. This project is being developed over 9 months as our capstone project. </p>
-                    <a class='link-button' href="/src/html/tall_horse.html">Check Out Tall Horse</a>
+                    <a class='link-button centered' href="/src/html/tall_horse.html">Check Out Tall Horse</a>
                 </div>
             </div>
-            <video autoPlay muted={true} loop playsInline>
-                <source src={menu} type="video/mp4" />
-            </video>
-            <video autoPlay muted={true} loop playsInline>
-                <source src={menu} type="video/mp4" />
-            </video>
+            <Image src="/videos/Gif_Combine.gif" />
+            <br></br>
+            <Image src="/videos/Gif_Combat.gif" />
+            <br></br>
+            <Image src="/videos/Gif_Spellcasting.gif" />
+            <br></br>
             <div class='two-col-grid'>
-                <Image src={opener} />
-                <Image src={shader} />
+                <Image src="/images/Level 1_4K_Closeup.png" />
+                <Image src="/images/Tutorial_4K_SunFromGround.png" />
+                <Image src="/images/Tutorial_4K_BackToSun2.png" />
+                <Image src="/images/Tutorial_4K_Kuku1.png" />
+                <Image src="/images/Tutorial_4K_TempleHallShoulder2.png" />
+                <Image src="/images/Tutorial_4K_CloseupKuku2.png" />
             </div>
             <div class='two-col-grid'>
-                <Image src={game_logo} isSquare={true} />
-                <Image src={logo} isSquare={true} />
-                <Image src={black_game_logo} isSquare={true} />
-                <Image src={tallhorse_bw} isSquare={true} />
+                <Image src="/game_logos/GameTitle_1Color.svg" />
+                <Image src="/game_logos/GameTitle_2Color.svg" />
+                <Image src="/game_logos/GameTitle_3Color.svg" />
+                <Image src="/game_logos/GameTitle_FullColor.svg" />
+                <Image src="/game_logos/GameTitle_Grayscale.svg" />
+                <Image src="/game_logos/GameTitle_W&B.svg" />
+                <Image src="/game_logos/IconGame_1Color.svg" isSquare />
+                <Image src="/team_logos/TeamLogo_1ColorWarm.svg" isSquare />
+                <Image src="/game_logos/IconGame_2Color.svg" isSquare />
+                <Image src="/team_logos/TeamLogo_2ColorWarm.svg" isSquare />
+                <Image src="/game_logos/IconGame_3Color.svg" isSquare />
+                <Image src="/team_logos/TeamLogo_FullColorWarm.svg" isSquare />
+                <Image src="/game_logos/IconGame_GrayscaleFull.svg" isSquare />
+                <Image src="/team_logos/TeamLogo_Grayscale.svg" isSquare />
+                <Image src="/game_logos/IconGame_White.svg" isSquare />
+                <Image src="/team_logos/TeamLogo_White.svg" isSquare />
+                <Image src="/game_logos/IconGame_Black.svg" isSquare />
+                <Image src="/team_logos/TeamLogo_Black.svg" isSquare />
             </div>
         </div>
     )
