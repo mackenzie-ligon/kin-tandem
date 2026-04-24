@@ -273,6 +273,9 @@ video {
       margin: 0 13rem;
     }
   }
+  .trailer-video {
+    width: 80%;
+  }
 }
 
 .main-img {
@@ -325,6 +328,11 @@ video {
     grid-area: img;
   }
 
+  .rect-img {
+      display: flex;
+      align-self: center;
+    }
+
   &.inverted {
     grid-template-columns: 1fr 1.7fr;
     grid-template-areas:
@@ -337,6 +345,7 @@ video {
     padding-left: 1rem;
     border-radius: 0 0.8rem 0.8rem 0;
     border: 3px solid rgba(140, 45, 11, 0.59);
+    border-left: none;
     z-index: -1;
     align-content: center;
     grid-area: text;
@@ -345,6 +354,10 @@ video {
       z-index: -1;
       border-radius: 0.8rem 0 0 0.8rem;
       border-right: none;
+    }
+
+    p, h3 {
+      margin: 0.5rem;
     }
   }
 }

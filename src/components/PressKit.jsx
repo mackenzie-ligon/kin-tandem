@@ -49,7 +49,7 @@ function PressKit() {
                     <p>In Kin Tandem, a new local co-op adventure, take the role of a pair of feline siblings as they climb their way through a magic temple. Work in tandem to combine Barsa's strength with Manu's spells as you solve challenges and defeat enemies.
                     </p>
                     <a class='link-button centered' href='https://tall-horse.itch.io/kin-tandem' target='_blank'>Itch.io</a>
-                    <a class='link-button centered' href={full_presskit} download>Full Presskit Download</a>
+                    <a class='link-button centered' href={full_presskit} download="KinTandem_Presskit">Full Presskit Download</a>
                 </div>
             </div>
             <video autoPlay muted={true} loop playsInline>
@@ -66,7 +66,7 @@ function PressKit() {
                 </div>
                 <div><h3>Tall Horse</h3>
                     <p>A Multidisciplinary team of Drexel seniors made up of Game Design and Production and College of Computing and Informatics majors. This project is being developed over 9 months as our capstone project. </p>
-                    <a class='link-button centered' href="/src/html/tall_horse.html">Check Out Tall Horse</a>
+                    <a class='link-button centered' href="/presskit/">Check Out Tall Horse</a>
                 </div>
             </div>
             <Image src="/videos/Gif_Combine.gif" />
