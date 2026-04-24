@@ -14,8 +14,8 @@ function AboutUs() {
       <h3>Who We Are</h3>
       <p>A multidisciplinary team made up of Game Design and Production (GDAP) and College of Computing and Informatics (CCI) majors. The project is being developed over 9 months as our capstone project.</p>
       <div class='three-col-grid'>
-        <Teammate headshot='Kirstin.png' name="Kirstin Bonnick" role="Producer" blurb={'Producer and promo artist. Working on task management and creating promotional materials for the team.'}portfolio={'https://www.artstation.com/kirstinbonnick'}/>
-        <Teammate headshot='ZacM.png' name="Zachary Millman" blurb={'Producer and Narrative Designer. Managed team documentation along with writing & directing character dialog.'} role="Producer" portfolio={'https://zacbm.com/'}/>
+        <Teammate headshot='Kirstin.png' name="Kirstin Bonnick" role="Producer" blurb={'Producer and promo artist. Working on task management and creating promotional materials for the team.'} portfolio={'https://www.artstation.com/kirstinbonnick'} />
+        <Teammate headshot='ZacM.png' name="Zachary Millman" blurb={'Producer and Narrative Designer. Managed team documentation along with writing & directing character dialog.'} role="Producer" portfolio={'https://zacbm.com/'} />
         <Teammate headshot='Fox.png' name="Fox Fleishmann" role="Tech Director" blurb={'Tech lead specializing in environment interactions and losing his mind while making builds.'} note={"Yes, his name is actually Fox. We're not going for a zoo animal theme (yet)."} portfolio={'https://www.ffleischmann03.com/'} />
         <Teammate headshot='Jake.png' name="Jacob Stratton" role="Creative Director" note={"He's also Manu's VA."} portfolio={'https://www.artstation.com/mollamba'} />
         <Teammate headshot={logo} name="Lily Durand" role="Art Director" blurb={'Art lead and primary character artist. Focused on concepting, modeling, texturing, and yapping tasks at my fellow artists.'} note={"She is the lovely artist behind all of our headshots! Also a wordscapes extraordinare."} portfolio={'https://www.artstation.com/lilydurand'} />
@@ -26,11 +26,11 @@ function AboutUs() {
         <Teammate headshot='Audrey.png' name="Audrey Go" role="Concept Artist, UI Designer" blurb={"Concept artist and UI designer. Contributor to the team server’s wordle streak"} note={"Don't tell her your starting word."} portfolio={'https://www.linkedin.com/in/audrey-go/'} />
         <Teammate headshot='Adriana.png' name="Adriana Vasquez" role="Gameplay Programmer" blurb={'Programmer. Developed the revival system and save system. VA for Barsa :D'} portfolio={`https://www.linkedin.com/in/adriana--vasquez/`} />
         <Teammate headshot='Akintoye.png' name="Akintoye Ilo" role="Gameplay Programmer, Sound Designer" blurb={"Gameplay Programmer, Worked on Barsa Gamplay! Audio Head, SFX creation, VO Recording, Mixing, Audio Programming... The whole 9 yards"} portfolio={"https://akintoye-ilo-personal-website.squarespace.com/games"} />
-        <Teammate headshot='Cam.png' name="Cameron Romero" role="Tools Programmer" blurb={"Programmer, likes frogs, designed and implemented puzzle system."} note={"He also coded the entire boss fight."} portfolio={'https://cameronhuangromero.com/'}/>
+        <Teammate headshot='Cam.png' name="Cameron Romero" role="Tools Programmer" blurb={"Programmer, likes frogs, designed and implemented puzzle system."} note={"He also coded the entire boss fight."} portfolio={'https://cameronhuangromero.com/'} />
         <Teammate headshot='Josh.png' name="Josh Walcott" role="Enemy Programmer" blurb={"I’m a game & software developer that programmed the 4 enemy types of the game."} portfolio={`https://joshuawalcott.site/`} />
-        <Teammate headshot='Mackenzie.png' name="Mackenzie Ligon" role="Web Developer, Technical Writer" blurb={'Mackenzie primarily focused on developing this website (and hopes you like it!) but also wrote most of the technical documentation for the game, including the System Requirements Specification, Design Document, and Acceptance Testing Plan. She did some minor engine work, creating a few puzzle pieces (moving platforms and adjustable columns).'} note={"I'm the editor behind the notes, if you couldn't tell."}portfolio={'https://www.linkedin.com/in/macaligon/'}/>
+        <Teammate headshot='Mackenzie.png' name="Mackenzie Ligon" role="Web Developer, Technical Writer" blurb={'Mackenzie primarily focused on developing this website (and hopes you like it!) but also wrote most of the technical documentation for the game, including the System Requirements Specification, Design Document, and Acceptance Testing Plan. She did some minor engine work, creating a few puzzle pieces (moving platforms and adjustable columns).'} note={"I'm the editor behind the notes, if you couldn't tell."} portfolio={'https://www.linkedin.com/in/macaligon/'} />
         <Teammate headshot='Minhal.png' name="Minhal Vakil" role="Gameplay Programmer" blurb={"Programmer, developed systems for character movement and stacking system"} portfolio={'https://minhalvakil.github.io/'} />
-        <Teammate headshot='Owen.png' name="Owen Miller" role="Gameplay Programmer" blurb={"Programmer, worked on spell system and debug tools"} portfolio={"https://ommiller.artstation.com/"}/>
+        <Teammate headshot='Owen.png' name="Owen Miller" role="Gameplay Programmer" blurb={"Programmer, worked on spell system and debug tools"} portfolio={"https://ommiller.artstation.com/"} />
         <Teammate headshot='Ryan.png' name="Ryan Brosius" role="Tools & System Programmer" blurb={"Programmer for spell systems & underlying systems. 57th best in the world at a hat in time speedrunning"} note={"'Anything is possible. Don't ask if it can be done, ask how much time it will take.' -Ryan, after Fox asked him to make a significant change to camera merging"} portfolio={`https://ryanbrosius.com/`} />
       </div>
     </div>
@@ -74,24 +74,26 @@ function Teammate({ headshot, name, role, portfolio, blurb, note }) {
           <div class='two-col-grid'>
             <button onClick={closeModal} class='modal-close'>X</button>
             <Image src={`/headshots/${headshot}`} isSquare={true} />
-            <div>
+            <div>              
               <h2>{name}</h2>
-              <h3>{role}</h3>
-              <p>{blurb}</p>
-              {note && <p class='editor-note'>Editor's Note: {note}</p>}
-               <a href={portfolio} target="_blank" rel="noopener noreferrer">
-                Check me out!
-              </a>
+              <div style={{ height: '75%', aspectRatio: '10 / 8', overflow: 'auto' }}>
+                <h3>{role}</h3>
+                <p>{blurb}</p>
+                {note && <p class='editor-note'>Editor's Note: {note}</p>}
+                <a href={portfolio} target="_blank" rel="noopener noreferrer">
+                  Check me out!
+                </a>
+              </div>
             </div>
           </div>
         </dialog>
         <h3>{name}</h3>
         <h3>{role}</h3>
-      </div>
+      </div >
       <a href={portfolio} target="_blank" rel="noopener noreferrer">
         Check me out!
       </a>
-    </div>
+    </div >
   )
 }
 
